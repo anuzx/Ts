@@ -87,7 +87,7 @@ interface Box<T> {
 }
 
 const numberBox: Box<number> = {// we could have put here string or any custom data type
-    content: 10 // if we put here string it will giev error 
+    content: 10 // if we put here string it will give error 
 
 }
 const numberBox2: Box<string> = {

@@ -71,38 +71,37 @@ type masalaChai = {
   spicelevel: number;
 };
 type GingerChai = {
-  type: "ginger"; 
+  type: "ginger";
   amount: number;
 };
 
-type chai = masalaChai | GingerChai //now we can use it easily 
+type chai = masalaChai | GingerChai; //now we can use it easily
 
-function makeChai(order :chai) {
-    switch (
-      order.type // here after using "." we will get option to select only type as only that can be have switch cases
-    ) {
-      case "masala": //in this case we will get option to select either masala or ginger
-        return "masala chai";
-        break;
-      case "ginger": 
-            return "ginger chai";
-        break
-    }
+function makeChai(order: chai) {
+  switch (
+    order.type // here after using "." we will get option to select only type as only that can be have switch cases
+  ) {
+    case "masala": //in this case we will get option to select either masala or ginger
+      return "masala chai";
+      break;
+    case "ginger":
+      return "ginger chai";
+      break;
+  }
 }
 
 //sometimes we need to check that if certain property exist then we are sure what category it belongs to
 
 function brew(order: masalaChai | GingerChai) {
-    if ("spicelevel" in order) {
-        return "its masala chai for sure"
-    }
+  if ("spicelevel" in order) {
+    return "its masala chai for sure";
+  }
 }
 
 //example 6 :using unknown
 
 //unknown type is safer than any , unkown means before using that variable we will assign the type but for any we dont ened to assign the type ever
 
-function isStringArray(arr: unknown): arr is string[]{
-    //this is usefull when we dont know the data type of input but we are sure the return value will be a certain data type
-    
+function isStringArray(arr: unknown): arr is string[] {
+  //this is usefull when we dont know the data type of input but we are sure the return value will be a certain data type
 }
